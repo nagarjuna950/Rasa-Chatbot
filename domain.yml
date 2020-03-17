@@ -1,0 +1,216 @@
+intents:
+- greet
+- goodbye
+- mood_happy
+- mood_affirm
+- mood_deny
+- mood_unhappy
+- welcome
+- inform
+
+entities:
+- EmpID
+- date
+- group
+- feedback
+
+slots:
+  feedback:
+    type: unfeaturized
+    auto_fill: false
+  
+
+templates:
+  
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey!This is Dora here.CK's new Smart Assistant.
+    image: "C:/Users/Dell/Music/ambfbacktrial/greet.jpg"
+  utter_greet1:
+  - text: I am here to spend a couple of minutes with you about your last 90 days in CavinKare.
+  utter_greet2:
+  - text: Don't worry,I will keep our chat confidential.Let's begin.
+  utter_que1:
+  - text: Will you be willing to buy your Just Mine! shampoo for Rs. 649?
+    buttons:
+    - title: "Yes"
+      payload: "Yes"
+    - title: "No"
+      payload: "No"
+  utter_que2:
+  - text: Are you be willing to buy your Just Mine! shampoo for Rs. 749?
+    buttons:
+    - title: "Yes"
+      payload: "Yes"
+    - title: "No"
+      payload: "No"
+  utter_que3:
+  - text: Following a discussion with your manager, are you now clear on your roles & responsibilities?
+    buttons:
+    - title: "Yes,I am absolutely clear"
+      payload: "Yes,I am absolutely clear"
+    - title: "Yes,I am mostly clear"
+      payload: "Yes,I am mostly clear"
+    - title: "I haven't met my management yet"
+      payload: "I haven't met my management yet"
+    - title: "I have very little clarity"
+      payload: "I have very little clarity"
+    - title: "I'm still unclear"
+      payload: "I'm still unclear"
+  utter_que4:
+  - text: Do you understand how your work contributes to acheiving your team's/department's objectives?
+    buttons:
+    - title: "Yes, I can"
+      payload: "Yes, I can"
+    - title: "Yes,mostly"
+      payload: "Yes,mostly"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "very little"
+      payload: "very little"
+    - title: "Not at all!"
+      payload: "Not at all!"
+  utter_que5:
+  - text: Do you feel that Cavinkare's culture inspires you to go the extra work?
+    buttons:
+    - title: "Yes,it does!"
+      payload: "Yes,it does!"
+    - title: "Yes,to a large extent"
+      payload: "Yes,to a large extent"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "Very little"
+      payload: "Very little"
+    - title: "No,it doesn't"
+      payload: "No,it doesn't"
+  utter_que6:
+  - text: Do you find it easy to colloborate with different teams to get work done?
+    buttons: 
+    - title: "Yes,it does!"
+      payload: "Yes,it does!"
+    - title: "Yes,to a large extent"
+      payload: "Yes,to a large extent"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "Very little"
+      payload: "Very little"
+    - title: "No,it doesn't"
+      payload: "No,it doesn't"
+  utter_que7:
+  - text: Do you feel you have sufficient autonomy to decide how your goals will be acheived?
+    buttons: 
+    - title: "Yes,I have complete freedom"
+      payload: "Yes,I have complete freedom"
+    - title: "Yes,to a large extent"
+      payload: "Yes,to a large extent"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "Very little"
+      payload: "Very little"
+    - title: "I have no freedom at all"
+      payload: "I have no freedom at all"
+  utter_que8:
+  - text: How comfortable are you voicing your concerns to your manager?
+    buttons: 
+    - title: "Yes,I am"
+      payload: "Yes,I am"
+    - title: "Yes,to a large extent"
+      payload: "Yes,to a large extent"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "Very little"
+      payload: "Very little"
+    - title: " Not at all!"
+      payload: "Not at all!"
+  utter_que9:
+  - text: In your experience your skip level manager approachable and easy to talk with?
+    buttons: 
+    - title: "Yes always!"
+      payload: "Yes always!"
+    - title: "Yes,to a large extent"
+      payload: "Yes,to a large extent"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "Very little"
+      payload: "Very little"
+    - title: " Not at all!"
+      payload: "Not at all!" 
+  utter_que10: 
+  - text: Do you understand the direction in which Organization is headed?
+    buttons: 
+    - title: "Yes I do!!"
+      payload: "Yes I do!"
+    - title: "Yes,to a large extent"
+      payload: "Yes,to a large extent"
+    - title: "I'm not sure"
+      payload: "I'm not sure"
+    - title: "Very little"
+      payload: "Very little"
+    - title: " Not at all!"
+      payload: "Not at all!" 
+   
+  utter_happy:
+  - text: Highly delighted to hear that!   
+  utter_happy1:        
+  - text: Thank you for your valuable feedback! We sincerely appreciate that you could spend your valuable time in helping us make your Just Mine!shampoo, the best ever!
+
+         
+
+
+  utter_unhappy:
+  - text: Thank you for your valuable feedback! We sincerely appreciate that you could spend your valuable time in helping us make your Just Mine!shampoo, the best ever!
+
+  
+  utter_thankyou:
+  - text: Thankyou for spending your valuable time.Have a Good day!Bye.
+  utter_thankyou1:
+  - text: Thankyou!Bye.
+
+  utter_submit:
+    - text: "All done!"
+      image: "C:/Users/Dell/Music/ambfbacktrial/thankyou.jpg"
+  utter_slots_values:
+    - text: "Thank you.Type /stop to exit:\n
+             - feedback: {feedback}"
+  
+  utter_ask_feedback:
+  - text: Please provide your valuable feedback,If any.
+  utter_welcome_message:
+  - text: This is Dora.Say Hi to me
+
+  
+  
+  
+actions:
+- __main__.ApiAction
+- actions.MoodIdentifier
+- action_mood_identifier
+- action_thankyou1
+- utter_goodbye
+- utter_greet
+- utter_greet1
+- utter_greet2
+- utter_que1
+- utter_que2
+- utter_que3
+- utter_que4
+- utter_que5
+- utter_que6
+- utter_que7
+- utter_que8
+- utter_que9
+- utter_que10
+- utter_happy
+
+- utter_happy1       
+- utter_unhappy
+- utter_ask_feedback
+- utter_thankyou
+- utter_thankyou1
+- utter_welcome_message
+- utter_submit
+- utter_slots_values
+forms:
+  - feedback_form
+
